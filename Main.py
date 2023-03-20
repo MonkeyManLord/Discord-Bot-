@@ -4,7 +4,7 @@ import os
 import json
 from dotenv import load_dotenv
 from discord.ext import commands
-load_dotenv(f'/Users/flstudio/Desktop/Code/Discord Bot/env') 
+load_dotenv(f'-implimented-') 
 
 
 token = os.getenv('token')
@@ -14,12 +14,12 @@ api_key = os.getenv('api_key')
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 url = "https://love-calculator.p.rapidapi.com/getPercentage"
 
-
+#functional
 @bot.event
 async def on_ready():
    print(f'Bot logged in as {bot.user}')
 
-
+#not functional
 @bot.command(name='Love')
 async def love_calculator(ctx, *, name2):
    name1 = ctx.author.name
@@ -49,20 +49,20 @@ async def love_calculator(ctx, *, name2):
    await ctx.channel.send(message)
 
 
-  
+  #not functional
 @bot.event
 async def on_member_join(member):
    user = member.author
    await user.send("Hello, World!")
 
-
+#functional
 @bot.event
 async def on_message(msg):
    if msg.author != bot.user:
        if msg.content.lower().startswith('!hi'):
            await msg.channel.send(f'Hi, {msg.author.display_name}')
 
-
+#functional
 @bot.event
 async def on_message_delete(message):
    await message.channel.send(f'{message.author.display_name} is acting quite sus :face_with_raised_eyebrow: \n They deleted: {message.content}')
