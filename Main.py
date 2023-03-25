@@ -49,11 +49,10 @@ async def love_calculator(ctx, *, name2):
     await ctx.channel.send(message)
 
 
-# not functional
+# functional
 @bot.event
 async def on_member_join(member):
-    user = member.author
-    await user.send("Hello, World!")
+    await member.send("Hello, World!")
 
 
 # functional
