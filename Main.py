@@ -8,7 +8,6 @@ import asyncio
 import json
 load_dotenv()
 
-chvgcghjghfghfuftytyftyffrty
 DISCORD_TOKEN = os.getenv('token')
 
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
