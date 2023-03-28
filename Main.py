@@ -5,6 +5,8 @@ from dotenv import load_dotenv
 from discord.ext import commands
 load_dotenv()
 
+print("hello mr monkey")
+
 
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
 RAPID_API_KEY = os.getenv('RAPID_API_KEY')
