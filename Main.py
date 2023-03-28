@@ -5,9 +5,6 @@ from dotenv import load_dotenv
 from discord.ext import commands
 load_dotenv()
 
-print("honkey")
-
-
 DISCORD_TOKEN = os.getenv('DISCORD_TOKEN')
 RAPID_API_KEY = os.getenv('RAPID_API_KEY')
 RAPID_API_URL = "https://love-calculator.p.rapidapi.com/getPercentage"
@@ -32,7 +29,8 @@ async def love(ctx, name: str):
     }
 
     try:
-        response = requests.request("GET", RAPID_API_URL, headers=headers, params=querystring)
+        response = requests.request(
+            "GET", RAPID_API_URL, headers=headers, params=querystring)
         response.raise_for_status()
 
         data = response.json()
@@ -54,7 +52,8 @@ async def on_message(msg):
     if msg.author != bot.user:
         if msg.content.lower().startswith('!hi'):
             await msg.channel.send(f'Hi, {msg.author.display_name}')
-    await bot.process_commands(msg) # This will run the other commands declared on the bot. Alternatively remove the on_message handler
+    # This will run the other commands declared on the bot. Alternatively remove the on_message handler
+    await bot.process_commands(msg)
 
 
 # functional
