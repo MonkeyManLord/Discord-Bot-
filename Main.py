@@ -12,8 +12,6 @@ RAPID_API_URL = "https://love-calculator.p.rapidapi.com/getPercentage"
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 
 
-SECRET_MESSAGE = "penis"
-
 # functional
 @bot.event
 async def on_ready():
